@@ -1,0 +1,56 @@
+<ion-content scroll="false" class="p-b-0 bg-custom">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      Bhilwara Ticket Booking
+    </div>
+  </div>
+  <div>
+    <ion-card class="card-view">
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-list class="no-border">
+              <ion-item>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input type="email" [(ngModel)]="username"></ion-input>
+                <ion-icon slot="end" name="person"></ion-icon>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" [(ngModel)]="password"></ion-input>
+                <ion-icon slot="end" name="eye-off"></ion-icon>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="text-align:right;">
+
+          <ion-col>
+
+            <a href="password">Forget Password ?</a>
+
+
+
+          </ion-col>
+
+
+        </ion-row>
+
+
+      </ion-card-content>
+    </ion-card>
+    <ion-row>
+
+    </ion-row>
+
+  </div>
+  <div style="text-align:center">
+    <ion-button class="signin-button btn-white" color="primary" shape="round" (click)="login()">
+      Sign In</ion-button>
+    <ion-button fill="outline" class="signin-button btn-white" color="primary" shape="round" (click)="createAccount()">
+      Sign Up</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Select Theatre
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-item *ngFor="let t of theatres" (click)="openSeatLayout(t)">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+
+      </ion-avatar>
+
+      <ion-card-content>
+        <ion-card-title style="text-align:center;">{{t.name}}</ion-card-title>
+
+
+        <p>
+          {{t.address}}
+        </p>
+        <p>
+          {{t.mobile}}
+        </p>
+        <p>
+
+          <ion-button (click)="seatShow()">9.00 AM</ion-button>
+          <ion-button (click)="seatShow()">2.00 PM </ion-button>
+          <ion-button (click)="seatShow()">6.00 PM </ion-button>
+        </p>
+
+      </ion-card-content>
+
+
+
+
+    </ion-item>
+
+
+  </ion-card>
+</ion-content>

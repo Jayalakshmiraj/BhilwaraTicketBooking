@@ -1,0 +1,43 @@
+<ion-content scroll="false" class="p-b-0 bg-custom">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+     Create Account
+    </div>
+  </div>
+  <div>
+    <ion-card class="card-view">
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-list class="no-border">
+              <ion-item>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input type="email"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input ></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="full" fill="outline" class="signin-button btn-white" color="primary" shape="round" (click)="loginIn()">Login</ion-button>
+          </ion-col>
+
+        </ion-row>
+        
+      </ion-card-content>
+    </ion-card>
+    <ion-row>
+    </ion-row>
+
+  </div>
+</ion-content>

@@ -1,0 +1,59 @@
+
+    .splash-bg {
+      position: relative;
+      background: url('https://image.freepik.com/free-vector/illustration-character-with-movie-reel_53876-26664.jpg') no-repeat transparent;      
+      background-size: cover;
+      height: 35%;
+      z-index: 1;
+    }
+  
+    .bg-custom{
+      /* background: url('/assets/bg-new.png') no-repeat transparent;      
+      background-size: cover; */
+    }
+    .splash-info {
+      position: relative;
+      z-index: 2;
+      margin-top: -64px;
+      text-align: center;
+    }
+    .splash-logo {
+      margin: auto;
+      background: url("https://bitbucket.org/Prem2k17/food-app-v2/raw/b4134287078ef947d9ab7b2e5e36dc992fe240c2/src/assets/img/appicon.png")  no-repeat transparent;
+      background-size: 100%;
+      width: 128px;
+      height: 128px;
+    }
+    .splash-intro {
+        font-size: x-large;
+        font-weight: bolder;
+        max-width: 80%;
+        color: #407ae0;
+        margin: auto;
+    }
+    button.login {
+      margin-top: 25px;
+      background-color: white;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+      color: #333;
+  
+      &.activated {
+        background-color: rgb(220, 220, 220);
+      }
+    }
+  
+    .signin-button{
+      /* float: right; */
+      margin: auto 0;
+    }
+
+    .card-view{
+        margin-bottom: 0px;
+        box-shadow: none;
+    }
+  
+    .btn-white button{
+        color: white;
+        border: 3px solid white;
+        font-weight: bolder;
+    }

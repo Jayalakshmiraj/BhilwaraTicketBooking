@@ -1,0 +1,76 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Dashboard
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-toolbar>
+      <ion-searchbar [(ngModel)]="searchText" (ionChange)="searchMovie($event)"></ion-searchbar>
+    </ion-toolbar>
+    <ion-slides pager="true" [options]="slideOpts" #mySlider (ionSlidesDidLoad)="slideDidLoad(mySlider)" autoplay="1000" loop="true" speed="3000" >
+      <ion-slide>
+        <ion-img src="/assets/aram.jpg"></ion-img>
+      </ion-slide>
+      <ion-slide>
+          <ion-img src="/assets/2.0.jpg"></ion-img>
+      </ion-slide>
+       
+      <ion-slide>
+          <ion-img src="/assets/captain.jpg"></ion-img>
+      </ion-slide>
+    </ion-slides><br /> 
+
+    <ion-card *ngFor="let m of moviesArray">
+      <ion-card-title style="text-align:center;">{{m.name}}</ion-card-title>
+      <ion-img src="{{m.image}}"></ion-img>
+
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+
+      <ion-badge slot="end" style="text-align:right;">{{m.badge}}</ion-badge>
+      <ion-button expand="block" (click)="bookTicket()">Book Now</ion-button>
+
+      
+    </ion-card>
+<!-- 
+    <ion-card>
+      <ion-card-title style="text-align:center;">Captain</ion-card-title>
+      <ion-img src="assets/captain.jpg"></ion-img>
+
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+      <ion-icon name="star"></ion-icon>
+
+      <ion-badge slot="end" style="text-align:right;">22</ion-badge>
+      <ion-button expand="block" >Book Now</ion-button>
+    </ion-card>
+
+
+
+    <ion-card>
+        <ion-card-title style="text-align:center;">Kesari</ion-card-title>
+        <ion-img src="assets/kesari.png"></ion-img>
+  
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+  
+        <ion-badge slot="end" style="text-align:right;">22</ion-badge>
+        <ion-button expand="block" >Book Now</ion-button>
+      </ion-card>
+ -->  </div>
+</ion-content>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import CustomerService from '../customer.service';
 
 
 
@@ -10,47 +11,26 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
- username="";
- password="";
-  constructor(private router:Router,public alertController: AlertController) { }
+customer={name:"",password:"",address:"",email:"",phone:""}
+customers=[];
+  constructor(private router:Router
+    ,private alertController: AlertController,
+    private customerService:CustomerService) { }
 
-  ngOnInit() {}
-  login(){
-    if(this.username == this.password){
-      this.router.navigate(['dashboard'])
-    }
-    else if(this.username==="" && this.password===""){
-      this.emptyAlert();
-    }
-   
-    else{
-    this.presentAlert();
-    }
-   
-    
+  ngOnInit() {
+    this.customerService.getRemoteCustomers().
+    subscribe((result) => {this.customers = result;});
   }
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'login Failed',
-      message: 'This is an alert message.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
+ login(customer){
+for(var i=0;i<this.customers.length;i++)
+{
+  if((customer.email==this.customers[i].email) && (customer.password==this.customers[i].password)){
+    this.router.navigate(['list']);
+    break;
   }
-
-  async emptyAlert() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'enter your username && password',
-      message: 'This is an alert message.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-  }
+}
+ }
   createAccount(){
-    this.router.navigate(['register'])
+    this.router.navigate(['registration'])
   }
 }

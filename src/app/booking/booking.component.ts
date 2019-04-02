@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router } from '@angular/router';
+import MoviesService from '../movies.service'
+import BookingService from '../booking.service'
+import { Router } from '@angular/router';
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-booking',
@@ -8,37 +11,37 @@ import {Router } from '@angular/router';
 })
 export class BookingComponent implements OnInit {
 
-  theatres = [
+  constructor(private route:ActivatedRoute,private moviesService: MoviesService, private router: Router, private bookingService: BookingService) { }
+id:number;
+private sub:any;
+movie:any={};
+  
+ngOnInit() {
+  this.sub =this.route.params.subscribe(params => {
+    this.id = +params['id'];
+  
+    this.moviesService.getRemoteMovieById(this.id).subscribe((movie)=>
     {
-      name : "Forum Mall",
-     
-      address : "Outer ring road, Madiwala",
-      mobile:9897654321
-     
-    },
-    {
-      name : "IMAX",
-      address : "Near shell petrol bunk, Bommanahalli",
-      mobile:9897654321
-
-    },
-    {
-      name : "INOX",
-      address : "Outer ring road, Marathahalli",
-      mobile:9897654321
-
-    }
-  ];
-
-  navigateToSeatSelection(){
-
-  }
-
-
-  constructor(private router:Router) { }
-
-  ngOnInit() {}
-  seatShow(){
-    this.router.navigate(['seat'])
-  }
+      this.movie =movie;
+     console.log(movie);
+    })
+  
+  })
 }
+
+  doPayment(){
+    this.router.navigate(['/payment']);
+  }
+
+  offersPage(){
+    this.router.navigate(['/offers']);
+  }
+
+  // bookTicket(booking){
+  //   this.bookingService.addRemoteBooking(this.booking).
+  //   subscribe(() => this.router.navigate(['/payment']));
+
+  // }
+}
+
+

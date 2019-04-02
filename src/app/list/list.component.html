@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <a href="add-list">
+      <ion-icon name='arrow-back'></ion-icon>
+    </a>
+    <ion-title>
+      Movies
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let m of movies">
+
+    <ion-icon name="videocam" slot="start"></ion-icon>
+    <ion-label>{{m.name}}</ion-label>
+
+
+
+
+    <ion-img src="{{m.image_url}}">
+    </ion-img>
+
+    <ion-label>Year of Release</ion-label>
+    {{m.year}}<br />
+
+    <ion-icon name="home" slot="start"></ion-icon>
+    {{m.production_house}}<br />
+    <ion-icon name="phone-portrait" slot="start"></ion-icon>
+    {{m.rating}}<br />
+    <ion-icon name="phone-portrait" slot="start"></ion-icon>
+    {{m.type}}<br />
+    <ion-icon name="phone-portrait" slot="start"></ion-icon>
+    {{m.language}}<br />
+    <ion-button (click)="select(m.id)">Book now</ion-button>
+  </ion-card>
+
+</ion-content>

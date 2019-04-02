@@ -1,0 +1,40 @@
+
+
+<ion-header>
+    <ion-toolbar>
+        
+      <ion-title>
+              <div class="splash-intro">
+                      REGISTER
+                  </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  
+              <ion-item>
+                <ion-label position="floating">Name</ion-label>
+                <ion-input type="text" [(ngModel)]="customer.name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="text" [(ngModel)]="customer.password" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Address</ion-label>
+                <ion-input type="text" [(ngModel)]="customer.address"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label position="floating">Email</ion-label>
+                  <ion-input type="text" [(ngModel)]="customer.email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Phone</ion-label>
+                    <ion-input type="text" [(ngModel)]="customer.phone" ></ion-input>
+                  </ion-item>
+          
+            <ion-button expand="full"  class="signin-button btn-white" color="primary" shape="round" (click)="loginIn(customer)">Login</ion-button>
+           
+
+     
+</ion-content>

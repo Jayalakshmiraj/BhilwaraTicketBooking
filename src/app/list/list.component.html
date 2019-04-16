@@ -1,18 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <a href="add-list">
-      <ion-icon name='arrow-back'></ion-icon>
-    </a>
-    <ion-title>
-      Movies
+   
+    <ion-title color="primary">
+      List of Movies
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding >
   <ion-card *ngFor="let m of movies">
-
-    <ion-icon name="videocam" slot="start"></ion-icon>
-    <ion-label>{{m.name}}</ion-label>
+    <div class="container">
+        <div class="titlecenter">
+            <ion-item class="center" style="color: #007bff;">{{m.name}}</ion-item>
+        </div>
+    </div>
+   
 
 
 
@@ -20,18 +21,24 @@
     <ion-img src="{{m.image_url}}">
     </ion-img>
 
-    <ion-label>Year of Release</ion-label>
-    {{m.year}}<br />
+    <ion-item slot="start">
+    <ion-icon name="calendar"  class="font-size"color="primary" ></ion-icon>
+    {{m.year}}
+    </ion-item>
 
-    <ion-icon name="home" slot="start"></ion-icon>
-    {{m.production_house}}<br />
-    <ion-icon name="phone-portrait" slot="start"></ion-icon>
-    {{m.rating}}<br />
-    <ion-icon name="phone-portrait" slot="start"></ion-icon>
-    {{m.type}}<br />
-    <ion-icon name="phone-portrait" slot="start"></ion-icon>
-    {{m.language}}<br />
-    <ion-button (click)="select(m.id)">Book now</ion-button>
+    <ion-item slot="end">
+    <ion-icon name="home"  color="primary" class="font-size" ></ion-icon>
+    {{m.production_house}}
+    </ion-item>
+    <ion-item slot="start">
+    <ion-icon name="heart"  color="primary" class="font-size" ></ion-icon>
+    {{m.rating}}
+    </ion-item>
+    <ion-item slot="end">
+    <ion-icon name="videocam"  color="primary" class="font-size" ></ion-icon>
+    {{m.type}}</ion-item>
+   
+    <ion-button class="b-c"  (click)="select(m.id)">Book now</ion-button>
   </ion-card>
 
 </ion-content>

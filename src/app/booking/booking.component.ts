@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import MoviesService from '../movies.service'
 import BookingService from '../booking.service'
 import { Router } from '@angular/router';
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute} from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-booking',
@@ -36,6 +39,8 @@ ngOnInit() {
   offersPage(){
     this.router.navigate(['/offers']);
   }
+
+
 
   // bookTicket(booking){
   //   this.bookingService.addRemoteBooking(this.booking).

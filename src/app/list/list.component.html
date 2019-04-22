@@ -1,44 +1,60 @@
 <ion-header>
   <ion-toolbar>
-   
+
     <ion-title color="primary">
       List of Movies
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding >
+
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts" #mySlider (ionSlidesDidLoad)="slideDidLoad(mySlider)" autoplay="1000"
+loop="true" speed="3000">
+<ion-slide>
+  <ion-img src="/assets/marvel.png"></ion-img>
+</ion-slide>
+<ion-slide>
+  <ion-img src="/assets/aram.png"></ion-img>
+</ion-slide>
+
+<ion-slide>
+  <ion-img src="/assets/avenger.png"></ion-img>
+</ion-slide>
+</ion-slides><br />
+
+ 
   <ion-card *ngFor="let m of movies">
     <div class="container">
-        <div class="titlecenter">
-            <ion-item class="center" style="color: #007bff;">{{m.name}}</ion-item>
-        </div>
+      <div class="titlecenter">
+        <ion-item class="center" style="color: #007bff;">{{m.name}}</ion-item>
+      </div>
     </div>
-   
-
-
-
-
     <ion-img src="{{m.image_url}}">
-    </ion-img>
+    </ion-img><br>
+    <ion-list>
+      
+          <ion-icon slot="start" ios="ios-star" md="md-star" color="primary"></ion-icon>
+          <ion-icon slot="start" ios="ios-star" md="md-star" color="primary"></ion-icon>
+          <ion-icon slot="start" ios="ios-star" md="md-star" color="primary"></ion-icon>
+          <ion-icon slot="start" ios="ios-star" md="md-star" color="primary"></ion-icon>
+          <ion-icon slot="start" ios="ios-star-outline" md="md-star-outlne" color="primary"></ion-icon>
+      
+    
+    <ion-col style="margin-left:200px">
+        {{m.year}}
+    </ion-col>
+    
+      
+    
+      
+    
+    </ion-list>
+    
+    
+    
 
-    <ion-item slot="start">
-    <ion-icon name="calendar"  class="font-size"color="primary" ></ion-icon>
-    {{m.year}}
-    </ion-item>
 
-    <ion-item slot="end">
-    <ion-icon name="home"  color="primary" class="font-size" ></ion-icon>
-    {{m.production_house}}
-    </ion-item>
-    <ion-item slot="start">
-    <ion-icon name="heart"  color="primary" class="font-size" ></ion-icon>
-    {{m.rating}}
-    </ion-item>
-    <ion-item slot="end">
-    <ion-icon name="videocam"  color="primary" class="font-size" ></ion-icon>
-    {{m.type}}</ion-item>
-   
-    <ion-button class="b-c"  (click)="select(m.id)">Book now</ion-button>
+    <ion-button class="b-c" (click)="select(m.id)">Book now</ion-button>
   </ion-card>
 
 </ion-content>

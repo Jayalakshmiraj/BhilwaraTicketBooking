@@ -19,4 +19,9 @@ movies=[];
   select(id){
 this.router.navigate(['booking/'+id])
   }
+  slideDidLoad(slides){
+    slides.startAutoplay();
+      }
+    
+    
 }
